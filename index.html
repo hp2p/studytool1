@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <style>
+    body {
+        background-color: #232F3E;
+        }
+    label, button, span {
+        color: #FF9900;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 40px;
+        }
+     input {
+        color: #232F3E;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 20px;
+        }
+    </style>
+    <script>
+        var callAPI = (newWord)=>{
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            var raw = JSON.stringify({"newWord":newWord});
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+            fetch("https://u1ojl8myuf.execute-api.us-east-2.amazonaws.com/dev", requestOptions)
+            .then(response => response.json())
+	    .then(data => { jsondata = JSON.parse(data.body);
+		document.getElementById("english").innerHTML = jsondata['english'];
+		document.getElementById("korean").innerHTML = jsondata['korean']; 
+				alert(jsondata['english'])
+	     } )
+            .catch(error => console.log('error', error));
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label>New Word:</label>
+        <input type="text" id="newWord">
+        <!-- set button onClick method to call function we defined passing input values as parameters -->
+        <button type="button" onclick="callAPI(document.getElementById('newWord').value)">Call API</button>
+    </form>
+    <br>
+    English: <span id="english"> </span> <br>
+    Korean: <span id="korean"> </span> 
+</body>
+</html>
