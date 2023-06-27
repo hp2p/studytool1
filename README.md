@@ -10,7 +10,7 @@ To do:
 * Make it quiz you on words you've made in the past over a period of time
 * Add Japanese
 
-* 
+
 studytool1
 
 AWS Amplify
