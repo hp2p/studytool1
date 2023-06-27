@@ -15,7 +15,8 @@ studytool1
 
 AWS Amplify
 
-	https://dev7480.d2j63amz7hlqu7.amplifyapp.com	dev7480
+	https://dev7480.d2j63amz7hlqu7.amplifyapp.com	
+        dev7480
 
 Lambda
 
