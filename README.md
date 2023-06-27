@@ -1,4 +1,16 @@
 # studytool1
+
+
+This is a tool to help you memorize words.
+Just type in a word and it will output a short English sentence containing the word.
+
+To do:
+* Use sentences you've already created for the same word.
+* Utilize sentences created by other users
+* Make it quiz you on words you've made in the past over a period of time
+* Add Japanese
+
+* 
 studytool1
 
 AWS Amplify
